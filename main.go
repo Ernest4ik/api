@@ -16,11 +16,11 @@ var books []book
 
 func postBook(c *gin.Context) {
 	var curBook book
-	if err := c.BindJson(&curBook); err != nil {
+	if err := c.BindJSON(&curBook); err != nil {
 		return
 	}
 	books = append(books, curBook)
-	c.IndentedJson(http.StatusCreated, curBook)
+	c.IndentedJSON(http.StatusCreated, curBook)
 
 }
 
